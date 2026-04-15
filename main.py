@@ -135,6 +135,7 @@ mol_types_list = []
 if best_model is not None:
     model.load_state_dict(best_model)
     torch.save(best_model, 'results/{}.pt'.format(model_name))
+    torch.save(best_model, 'model.pt')
 model.eval()
 with torch.no_grad():
     for sample in test_data:
